@@ -16,8 +16,8 @@ class CarListRowWidget extends StatelessWidget {
               subtitle: Text("Findex Point: 150"),
               trailing: Icon(Icons.car_rental),
             ),
-            Image.network(
-                "https://mychiptuningfiles.com/tr/image/models/RrqzC1YeTCoj5FnDIfOlD0LsNPUjlo.png"),
+            // Image.network(
+            //     "https://mychiptuningfiles.com/tr/image/models/RrqzC1YeTCoj5FnDIfOlD0LsNPUjlo.png"),
             Container(
               alignment: Alignment.topLeft,
               margin: EdgeInsets.only(left: 15),
