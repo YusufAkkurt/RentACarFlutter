@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:rent_a_car/screens/main_screen.dart';
 
-void main() {
+Future<void> main() async {
+  HttpOverrides.global = new MyHttpOverrides();
   runApp(MyApp());
 }
 
