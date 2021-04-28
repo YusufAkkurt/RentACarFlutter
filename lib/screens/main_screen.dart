@@ -32,9 +32,10 @@ class MainScreenState extends State<MainScreen> {
   }
 
   getCars() {
-    CarService.fetchAlbum().then((response) => {
+    CarService.getAll().then((response) => {
           setState(() {
-            print(response.body);
+            var list = jsonDecode(response.body);
+            print(list["data"]);
           })
         });
   }
