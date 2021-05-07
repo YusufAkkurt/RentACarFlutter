@@ -1,22 +1,42 @@
-class Car {
+import 'package:rent_a_car/models/car_image.dart';
+
+class CarDetails{
   int id;
   int brandId;
   int colorId;
+  String brandName;
+  String description;
+  String colorName;
   int modelYear;
   double dailyPrice;
-  String description;
+  List<CarImage> carImages;
   int findexPoint;
 
-  Car(this.id, this.brandId, this.colorId, this.modelYear, this.dailyPrice,
-      this.description, this.findexPoint);
 
-  Car.fromJson(Map json) {
+  CarDetails(
+      this.id,
+      this.brandId,
+      this.colorId,
+      this.brandName,
+      this.description,
+      this.colorName,
+      this.modelYear,
+      this.dailyPrice,
+      this.carImages,
+      this.findexPoint);
+
+  CarDetails.fromJson(Map json) {
     this.id = json["id"];
     this.brandId = json["brandId"];
     this.colorId = json["colorId"];
+
+    this.brandName = json["brandName"];
+    this.description = json["description"];
+    this.colorName = json["colorName"];
+
     this.modelYear = json["modelYear"];
     this.dailyPrice = double.tryParse(json["dailyPrice"].toString());
-    this.description = json["description"];
+    this.carImages = json["carImage"];
     this.findexPoint = json["findexPoint"];
   }
 

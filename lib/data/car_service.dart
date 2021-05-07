@@ -7,4 +7,9 @@ class CarService {
   static Future<http.Response> getAll() async {
     return await http.get(Uri.https(_authority, _unencodedPath));
   }
+
+  static Future<http.Response> getAllCarDetails() async {
+    String detailPath = "/get-details";
+    return await http.get(Uri.https(_authority, _unencodedPath + detailPath));
+  }
 }
