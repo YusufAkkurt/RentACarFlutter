@@ -17,7 +17,7 @@ class CarListWidget extends StatelessWidget {
       itemCount: carDetails.length,
       itemBuilder: (BuildContext context, index) {
         var carDetail = this.carDetails[index];
-        var imagePath = "https://mychiptuningfiles.com/tr/image/models/RrqzC1YeTCoj5FnDIfOlD0LsNPUjlo.png";
+        var baseUrl = "https://10.0.2.2:5001/";
         return Card(
           margin: EdgeInsets.all(8),
           child: Column(
@@ -27,7 +27,7 @@ class CarListWidget extends StatelessWidget {
                 subtitle: Text("Findex Puanı: " + carDetail.findexPoint.toString()),
                 trailing: Text(carDetail.dailyPrice.toString() + " ₺"),
               ),
-              Image.network(imagePath),
+              Image.network(baseUrl + carDetail.carImages[0].imagePath),
               ListTile(
                 title: Text("Detaylar", style: TextStyle(fontWeight: FontWeight.bold),),
                 subtitle: Text(

@@ -1,12 +1,12 @@
-class CarImage{
+class CarImage {
   int id;
   int carId;
   String imagePath;
-  DateTime date;
+  String date;
 
   CarImage(this.id, this.carId, this.imagePath, this.date);
 
-  CarImage.fromJson(Map json){
+  CarImage.fromJson(Map json) {
     this.id = json["id"];
     this.carId = json["carId"];
     this.imagePath = json["imagePath"];

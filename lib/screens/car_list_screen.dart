@@ -14,12 +14,16 @@ class _CarListScreenState extends State<CarListScreen> {
   var carDetails = <CarDetails>[];
 
   @override
+  void initState() {
+    this.getCarDetails();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    this.getCars();
     return CarListWidget(this.carDetails);
   }
 
-  getCars() {
+  getCarDetails() {
     CarService.getAllCarDetails().then((response) => {
       setState(() {
         Iterable carList = jsonDecode(response.body)["data"];
