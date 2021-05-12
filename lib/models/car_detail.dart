@@ -28,7 +28,6 @@ class CarDetail {
 
   CarDetail.fromJson(Map json) {
     var list = json["carImages"] as List;
-    print(list.toString());
     List<CarImage> carImagesList = list.map((carImage) => CarImage.fromJson(carImage)).toList();
 
     this.id = json["id"];
