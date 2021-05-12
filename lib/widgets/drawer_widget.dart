@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rent_a_car/screens/brand_list_screen.dart';
+import 'package:rent_a_car/screens/main_screen.dart';
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -28,29 +30,26 @@ class DrawerWidget extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Arabalar",
+              "Ana sayfa",
               style: TextStyle(fontSize: 18),
             ),
-            onTap: () => print("Arabalar"),
+            onTap: () => customRoute(context, MainScreen()),
           ),
           ListTile(
             title: Text(
               "Markalar",
               style: TextStyle(fontSize: 18),
             ),
-            onTap: () => print("Markalar"),
-          ),
-          ListTile(
-            title: Text(
-              "Renkler",
-              style: TextStyle(fontSize: 18),
-            ),
-            onTap: () => print("Renkler"),
+            onTap: () => customRoute(context, BrandListScreen()),
           ),
         ],
       ),
     );
 
     return drawer;
+  }
+
+  customRoute(BuildContext context, screen) {
+    Navigator.push(context, MaterialPageRoute(builder: (builder) => screen));
   }
 }
