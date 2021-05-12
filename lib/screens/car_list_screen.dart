@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:rent_a_car/data/car_service.dart';
 import 'package:rent_a_car/models/car_detail.dart';
-import 'package:rent_a_car/widgets/car_list_widget.dart';
+import 'package:rent_a_car/widgets/car/car_list_widget.dart';
 
 class CarListScreen extends StatefulWidget {
   @override
