@@ -1,6 +1,6 @@
 import 'package:rent_a_car/models/car_image.dart';
 
-class CarDetails {
+class CarDetail {
   int id;
   int brandId;
   int colorId;
@@ -12,7 +12,9 @@ class CarDetails {
   List<CarImage> carImages;
   int findexPoint;
 
-  CarDetails(
+  CarDetail.empty();
+
+  CarDetail(
       this.id,
       this.brandId,
       this.colorId,
@@ -24,8 +26,9 @@ class CarDetails {
       this.carImages,
       this.findexPoint);
 
-  CarDetails.fromJson(Map json) {
+  CarDetail.fromJson(Map json) {
     var list = json["carImages"] as List;
+    print(list.toString());
     List<CarImage> carImagesList = list.map((carImage) => CarImage.fromJson(carImage)).toList();
 
     this.id = json["id"];
