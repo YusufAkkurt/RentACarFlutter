@@ -9,11 +9,6 @@ class MainScreen extends StatefulWidget {
 class MainScreenState extends State<MainScreen> {
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -22,6 +17,7 @@ class MainScreenState extends State<MainScreen> {
           iconTheme: IconThemeData(color: Colors.black87),
         ),
         body: CarListScreen(),
-        drawer: DrawerWidget());
+        drawer: DrawerWidget()
+    );
   }
 }

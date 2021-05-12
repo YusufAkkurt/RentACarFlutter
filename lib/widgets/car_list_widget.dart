@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rent_a_car/models/car_details.dart';
+import 'package:rent_a_car/models/car_detail.dart';
+import 'package:rent_a_car/screens/car_detail_screen.dart';
 
 class CarListWidget extends StatelessWidget {
-  var carDetails = <CarDetails>[];
+  var carDetails = <CarDetail>[];
 
   CarListWidget(this.carDetails);
 
@@ -49,24 +50,11 @@ class CarListWidget extends StatelessWidget {
                         padding: EdgeInsets.only(right: 8, bottom: 10),
                         child: OutlinedButton(
                           child: Text("Detaylar"),
-                          onPressed: () {
-                            print("Detaylar");
-                          },
+                          onPressed: () => goToDetail(context, carDetail),
                           style: ButtonStyle(
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.black87),
-                        ),
-                        )),
-                    Padding(
-                        padding: EdgeInsets.only(right: 16, bottom: 10),
-                        child: OutlinedButton(
-                          child: Text("Kirala"),
-                          onPressed: () {
-                            print("Kirala");
-                          },
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.black54),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        ),
+                            foregroundColor: MaterialStateProperty.all<Color>(
+                                Colors.black87),
+                          ),
                         )),
                   ],
                 ),
@@ -74,5 +62,10 @@ class CarListWidget extends StatelessWidget {
             ),
           );
         });
+  }
+
+  void goToDetail(BuildContext context, CarDetail carDetail) async {
+    await Navigator.push(context,
+        MaterialPageRoute(builder: (builder) => CarDetailScreen(carDetail)));
   }
 }
