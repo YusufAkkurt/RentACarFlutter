@@ -28,14 +28,14 @@ class CarDetailScreen extends StatelessWidget {
             itemCount: carDetail.carImages.length,
             itemBuilder: (context, index, realIdx) {
               var baseUrl = "https://10.0.2.2:5001/";
-              var carImages = carDetail.carImages[index];
+              var carImage = carDetail.carImages[index];
               return Container(
                 margin: EdgeInsets.all(6.0),
                 decoration: BoxDecoration(
                   color: Colors.grey[350],
                   borderRadius: BorderRadius.circular(8.0),
                   image: DecorationImage(
-                    image: NetworkImage(baseUrl + carImages.imagePath),
+                    image: NetworkImage(baseUrl + carImage.imagePath),
                     fit: BoxFit.cover,
                   ),
                 ),
